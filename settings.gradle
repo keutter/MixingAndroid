@@ -1,0 +1,13 @@
+include ':app'
+rootProject.name='MixingAndroid'
+
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+        settingsDir.parentFile,
+        'mixing_flutter/.android/include_flutter.groovy'
+))
+include ':mixing_flutter'
+project(':mixing_flutter').projectDir = new File('../mixing_flutter')
+
+include ':mixing_flutter'
+project(':mixing_flutter').projectDir = new File('../mixing_flutter')
